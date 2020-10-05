@@ -15,8 +15,18 @@ def fibo(n):
     else:
         return int(round(pow(golden, n + 1) / math.sqrt(5)))
 
-def radius(n):
-    return math.sqrt(n + 1)
+class FiboGrowth:
+    def __init__(self, r0, a0, area_slope = 0.0):
+        assert area_slope >= 0.0
+        self.r0 = r0
+        self.a0 = a0
+        self.da = area_slope
 
-def angle(n):
-    return n * phi_rad
+    def radius(self, n):
+        return self.r0 * math.sqrt((1.0 + n) * (1.0 + n * self.da / 2.0))
+
+    def angle(self, n):
+        return n * phi_rad
+
+    def area(self, n):
+        return self.a0 * (1.0 + self.da * n)
