@@ -17,3 +17,10 @@ Jupyter notebooks are version controlled as Markdown files thanks to Jupyter's p
 ## To view online
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pierre-dejoue/python-notebooks/master)
+
+## To Convert to/from Markdown format
+
+```
+jupytext --to ipynb Circumcircle.md
+jupytext --to md    Circumcircle.ipynb
+```
